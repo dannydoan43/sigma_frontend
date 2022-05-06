@@ -1,0 +1,11 @@
+<div class="sidebar-view-subreddit">
+    <div style="color: aliceblue; font-weight: bold">Browse Users</div>
+    <hr>
+    <span *ngFor="let user of users">
+        <div class="subreddit-text"><a>{{user.username}}</a></div>
+        <hr>
+    </span>
+    <div style="text-align: center">
+        <button class="login">View All</button>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+.btnCreatePost, .btnCreateSubreddit{
+    background-color: #5865F2;
+    border-color: #5865F2;
+    color: aliceblue;
+    fill: #5cb85c;
+    border-radius: 4px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 3px 16px;    
+    opacity: 1;
+}
+.btnCreatePost:hover{
+    opacity: 0.8;
+  }
+.form-control{
+    background-color: #2C2F33;
+    color:aliceblue;
+}
+
+.post-form {
+    margin-top: 10px;
+}
+.angular-editor .angular-editor.toolbar::ng-deep {
+    background-color:#2C2F33;
+}
+.angular-editor .angular-editor.toolbar{
+    background-color:#2C2F33 !important;
+}

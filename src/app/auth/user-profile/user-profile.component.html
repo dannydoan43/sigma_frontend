@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="text ">
+      Welcome <b>{{currentUser}}</b>.<br />
+      This is your user profile page.
+    </div>
+    <!-- <hr /> -->
+    <div class="text ">
+        <button class="login " (click)="displayPosts()">Posts</button>
+        <button class="login" (click)="displayComments()">Comments</button>
+        <button class="login" (click)="displaySettings()">Settings</button>
+    </div>
+    <div class="text" *ngIf="showPost">
+        Your Posts:
+        <hr>
+
+    <app-post-section [posts]="posts"></app-post-section>
+</div>
+    <!-- <hr /> -->
+    <div class="text" *ngIf="showComments">
+      Your Comments:
+      <hr>
+
+    <div *ngFor="let comment of comments | reverse">
+      <div class="comment">
+        <div class="username">
+          <a>{{comment.username}}</a>
+        </div>
+        <div>
+          <p>{{comment.createdAt | timeago}}</p>
+        </div>
+        <b class="message">{{comment.message}}</b>
+      </div>
+      <hr />
+    </div>
+    </div>
+    <div class="row" *ngIf="showSettings">
+        <div class="col-md-12">
+            <form class="post-form" [formGroup]="updateUserForm" (ngSubmit)="updateUser()">
+                <div class="form-group">
+                    <span class="text">First Name:</span>
+                    <input type="text" class="form-control" [formControlName]="'firstName'">
+                    <span class="text">Last Name:</span>
+                    <input type="text" class="form-control" [formControlName]="'lastName'">
+                    <span class="text">Description (optional):</span>
+                    <input type="text" class="form-control" [formControlName]="'description'">
+                    <span class="text">Username:</span>
+                    <input type="text" class="form-control" [formControlName]="'username'">
+                    <span class="text">Password:</span>
+                    <input type="text" class="form-control" [formControlName]="'password'">
+                    <div style="margin-top:10px;">
+                        <button class="btnCreatePost">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>

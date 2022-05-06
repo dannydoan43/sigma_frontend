@@ -1,0 +1,58 @@
+<!--Navbar-->
+<nav class="navbar navbar-expand-md navbar-custom">
+
+    <!-- Navbar brand -->
+    <a class="" style="margin-left:1em; font-size:1em;" href="#">Sigma Trade<img class="logo" src="./assets/images/logo.png" alt="couldnt load pic sry"></a>
+    
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+        <div class="ms-auto">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+      <!-- Links -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active" style="margin-top: .5em;margin-right:.5em"  >
+          <a class="nav-link login" href="#" routerLink="/home">Home
+            <span class="sr-only"></span>
+          </a>
+        </li>
+          
+          <li class="nav-item" style="margin-top: .33em" *ngIf="!isLoggedIn">
+            <a class="nav-link sign-up" style="margin-right:1em" href="#" routerLink="/sign-up">Signup</a>
+          </li>
+          <li class="nav-item" style="margin-top: .5em" *ngIf="!isLoggedIn">
+            <a class="nav-link login" href="#" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item" style="margin-top: .5em" *ngIf="isLoggedIn">
+            <a class="nav-link sign-up" style="margin-right:.5em" href="#" (click)="logout()">Logout</a>
+            </li>
+            <!-- Dropdown (maybe whenever a user is logged in, the dropdown will appear and you can select user info from there) -->
+                <li class="nav-item dropdown" *ngIf="isLoggedIn">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{username}}
+              </a>
+          
+                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" (click)="goToProfile()"> Edit settings </a>
+                    <a class="dropdown-item" href="#"> Edit profile page </a>
+                    <a class="dropdown-item" href="#"> Show profile page </a>
+                    <a class="dropdown-item" href="#"> logout </a>
+                  </div>
+                </li>
+      </ul>
+      <!-- Links -->
+      
+    </div>
+    <!-- Collapsible content -->
+  
+  </nav>
+  <!--/.Navbar-->

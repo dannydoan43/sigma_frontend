@@ -1,0 +1,19 @@
+.sidebar-view-subreddit {
+    width: 312px;
+    height: 242px;
+    --post-line-color: white;    
+    border: 1px solid rgba(253, 253, 253, 0.2);
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: #2C2F33;
+    color: aliceblue;
+    position: relative;
+    border-radius: 4px;
+    padding:5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar-view-subreddit {
+    height: 280px;
+  }

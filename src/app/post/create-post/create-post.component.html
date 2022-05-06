@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+      <hr />
+      <div class="create-post-container col-md-9">
+        <form class="post-form" [formGroup]="createPostForm" (ngSubmit)="createPost()">
+          <div class="form-group">
+            <div class="create-post-heading">Create Post</div>
+            <hr />
+            <input type="text" [formControlName]="'title'" class="form-control" style="margin-top: 5px "placeholder="Captivating Title">
+            <textarea name="text" cols="40" rows="5" [formControlName]="'text'" class="form-control" style="margin-top: 5px" placeholder="What's on your mind?"></textarea>
+            <div style="margin-top: 5px" class="float-right">
+                <button (click)="closePost()" class="btnDiscard">Discard</button>
+                <button class="btnCreatePost">Post</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3">
+        <app-sidebar></app-sidebar>
+        <app-explore-sidebar></app-explore-sidebar>
+      </div>
+    </div>
+  </div>

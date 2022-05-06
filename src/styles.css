@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import '~bootstrap/dist/css/bootstrap.css'; */
+html{    
+  padding: 0;
+  height: 100%;  
+}
+body{
+  height: 100%; 
+  background-color: #1f2225;
+}
+/* background-color: #DAE0E6;   background-color: #7f858b;2C2F33 dark but nt black d5d8e6
+23272A 
+*/
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+/* 7289DA , removing border: 1px solid;*/
+.login,
+.sign-up {
+  background-color: #5865F2;
+  border-color: #5865F2;
+  color: aliceblue;
+  fill: #5cb85c;
+  border-radius: 4px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 24px;
+  text-transform: uppercase;
+  padding: 3px 16px;
+  opacity: 1;
+}
+.login:hover{
+  opacity: 0.6;
+}
+.quote {
+  color: #8cc540;
+  font-style: italic;
+}
+
+.redText {
+  color: Red;
+  font-size: 12px;
+  font-family: Arial;
+}
+
+a,u {
+  text-decoration: none;
+  color:aliceblue;
+}
+a:hover,u:hover{
+  color:gray;
+}

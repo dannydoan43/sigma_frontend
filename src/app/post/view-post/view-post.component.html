@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">    
+      <hr />
+      <div class="col-md-8">
+      </div>
+      <div class="col-md-2"><button class="float:right login" (click)="goBack()">CLOSE X</button></div>
+
+      <div class="col-md-9">
+        <div class="row post">
+          <div class="col-md-11">
+            <span>
+              <!-- <span class="subreddit-text"><a class="post-url" href="">{{post.username}}</a></span> -->
+              <span>Posted
+                <span> {{post.createdAt | timeago}} </span>
+                by              
+                <a class="username" href="">{{post.username}}</a>
+              </span>
+            </span>
+            <hr />
+            <span class="post-title">{{post.title}}</span>
+            <div>
+              <p class="post-text" [innerHtml]="post.text"></p>
+            </div>
+            <div class="post-comment">
+              <form [formGroup]="commentForm" (ngSubmit)="postComment()">
+                <div class="form-group">
+                  <!-- <textarea class="form-control" [formControlName]="'message'" placeholder="Your Thoughts?"></textarea> -->
+                  <angular-editor [formControlName]="'message'" [config]="editorConfig"></angular-editor>
+                </div>
+                <button type="submit" class="login" style="margin-top: 5px; float:right">Comment</button>
+              </form>
+            </div>
+            <div style="margin-top: 60px;" *ngFor="let comment of comments | reverse">
+              <div class="comment">
+                <!-- <div class="username">
+                  <span href="">{{comment.username}}</span>
+                </div> -->
+                <a href="" class="username">{{comment.username}}</a>
+                <div>
+                  <p>{{comment.createdAt | timeago}}</p>
+                </div>
+                <div *ngIf="!updateCom">
+                  <div class="message bold">{{comment.message}}</div>
+                  <div>
+                    <button class="test" style="margin-top:5px;" (click)="changeCommentVar(comment.id)" *ngIf="comment.username==username">edit</button>
+                    <button class="test" style="margin-top:5px;" (click)="deleteComment(comment.id)" *ngIf="comment.username==username || post.username == username">remove</button>
+                  </div>
+                </div>
+                <form [formGroup]="updateCommentForm" (ngSubmit)="updateComment()" *ngIf="updateCom">
+                  <div class="form-group">
+                    <angular-editor [formControlName]="'message'" [config]="editorConfig"></angular-editor>
+                  </div>
+                    <button type="submit" class="login " style="margin-top: 5px; float:right" (click)="discardChanges()">discard</button>
+                    <button type="submit" class="login " style="margin-top: 5px; float:right">update</button>
+                </form>
+              </div>
+              <hr />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <app-sidebar></app-sidebar>
+        <app-explore-sidebar></app-explore-sidebar>
+      </div>
+    </div>
+  </div>

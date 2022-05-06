@@ -1,0 +1,140 @@
+header{
+    border-radius: 1px solid;
+}
+.reddit-icon-svg{
+    height: 50px;
+    padding: 8px 8px 8px 0;
+    width: 50px;
+}
+
+.reddit-text{        
+    font-weight: 700;
+    height: 50px;
+    width: 50px;    
+}
+.logo{
+    text-decoration: none;
+}
+
+.login{    
+    background-color: transparent;
+    border-color: #146c43;
+    color: aliceblue;
+    fill: #0079D3;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 3px 16px;
+    opacity: 1;  
+}
+.login:hover{
+    opacity: .5;
+}
+.sign-up{    
+    background-color: transparent;
+    border-color: #146c43;
+    color: aliceblue;
+    fill: #0079D3;
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 3px 16px;
+    opacity: 1;  
+}
+ /* border-color:#146c43 dark green */
+.sign-up{
+    background-color: #5865F2;
+    border-color: #5865F2;
+    color: aliceblue;
+}
+
+.sign-up:hover{
+    opacity: 0.6;
+}
+
+.userdetails{    
+    background-color: transparent;
+    border-color: #0079D3;
+    color: #0079D3;
+    fill: #0079D3;
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 3px 16px;
+    opacity: 1;
+    border: 0px;
+}
+
+.userdetails:hover{
+    border: 1px solid;
+}
+
+.dropdown-item{
+    background-color: #f8f9fa;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.dropdown-item:hover{
+    background-color: #5865F2;
+}
+
+.dropdown-menu{
+    background-color: #f8f9fa;
+    padding: 0;
+}
+
+.account-icon{
+    border-radius: 4px;
+    float: left;
+    margin-right: 5px;
+    max-height: 24px;
+    max-width: 24px;
+}
+.navbar-custom {
+    background-color:#2C2F33;
+
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text{
+    color:aliceblue;
+    border: none;
+}
+.navbar-nav .nav-link {
+    color: aliceblue;
+}
+.navbar-toggler-icon {
+    background-color: aliceblue;
+    /* use a picture? */
+}
+
+.logo {
+    height:40px;
+    width: 40px;
+    margin-left:.5em;
+}

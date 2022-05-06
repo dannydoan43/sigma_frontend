@@ -1,0 +1,31 @@
+    <div class="container">
+        <div class="row post">
+          <hr />
+          <div class="col-md-9" style="background-color: #2C2F33; color:aliceblue; margin-top:10px;">
+            <div >
+                <form class="post-form" [formGroup]="updatePostForm" (ngSubmit)="updatePost()">
+                  <div class="form-group">
+                    <!-- <div class="create-post-heading">Update Post</div> -->
+                    <!-- <hr /> -->
+                    <input type="text" [formControlName]="'title'" class="form-control">
+                    <!-- <textarea name="text" cols="40" rows="5" [formControlName]="'text'" class="form-control" style="margin-top: 5px"></textarea> -->
+                    <angular-editor [formControlName]="'text'" [config]="editorConfig"></angular-editor>
+                    <div style="margin-top: 35px; margin-left:755px;" class="">
+                        <button (click)="closePost()" class="btnCreatePost" style="margin-right:20px;">Discard</button>
+                        <button class="btnCreatePost" (click)="updatePost()">Post</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+          </div>
+          
+          <div class="col-md-3">
+            <app-sidebar></app-sidebar>
+            <app-explore-sidebar></app-explore-sidebar>
+          </div>
+        </div>
+      </div>
+  <!-- <div class="reddit-body">
+    <div class="container">
+      <div class="row">
+        <hr> -->
