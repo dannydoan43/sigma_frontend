@@ -12,7 +12,6 @@ export class TokenInterceptor implements HttpInterceptor{
 
     isTokenRefreshing=false;
     refreshTokenSubject:BehaviorSubject<any>=new BehaviorSubject(null);
-    //why dd he put public instead of private here
     constructor(private authService:AuthenticationService){
 
     }
@@ -27,7 +26,7 @@ console.log(jwtToken);
         if (jwtToken) {
             console.log("make it in here? matching jwttokens");
             return next.handle(this.addToken(req,jwtToken)).pipe(catchError(error=> {
-                if( error instanceof HttpErrorResponse && (error.status === 401 || error.status == 500) ) {   //changing error from 403 to 401, adding in error 500 results in refreshtoken not getting a new value (invalid refresh token)
+                if( error instanceof HttpErrorResponse && (error.status === 401 || error.status == 500) ) {
                     console.log("make it in here? this is intercept");
                     return this.handleAuthErrors(req,next);
                 } else {
@@ -64,32 +63,6 @@ console.log(jwtToken);
                 })
             );
         }
-    //     console.log("make it in here? this is handleautherrors");
-    //     console.log(this.isTokenRefreshing);    //this value is currently true so it will never get into the if statement?
-    // if (!this.isTokenRefreshing) {
-    //     console.log("make it in here?1");
-    //     this.isTokenRefreshing = true;
-    //     this.refreshTokenSubject.next(null);
-    //     console.log("make it in here?2");
-    //     return this.authService.refreshToken().pipe(
-    //         switchMap((refreshTokenResponse: LoginResponse) => {
-    //             this.isTokenRefreshing = false;
-    //             this.refreshTokenSubject
-    //                 .next(refreshTokenResponse.authenticationToken);
-    //             return next.handle(this.addToken(req,
-    //                 refreshTokenResponse.authenticationToken));
-    //         })
-    //     )
-    // } else {
-    //     return this.refreshTokenSubject.pipe(
-    //         filter(result => result !== null),
-    //         take(1),
-    //         switchMap((res) => {
-    //             return next.handle(this.addToken(req,
-    //                 this.authService.getJwtToken()))
-    //         })
-    //     );
-    // }
     }
 
     addToken(req: HttpRequest<any>, jwtToken: any) {

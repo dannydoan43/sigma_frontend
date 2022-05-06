@@ -9,7 +9,6 @@
         <div class="row post">
           <div class="col-md-11">
             <span>
-              <!-- <span class="subreddit-text"><a class="post-url" href="">{{post.username}}</a></span> -->
               <span>Posted
                 <span> {{post.createdAt | timeago}} </span>
                 by              
@@ -24,7 +23,6 @@
             <div class="post-comment">
               <form [formGroup]="commentForm" (ngSubmit)="postComment()">
                 <div class="form-group">
-                  <!-- <textarea class="form-control" [formControlName]="'message'" placeholder="Your Thoughts?"></textarea> -->
                   <angular-editor [formControlName]="'message'" [config]="editorConfig"></angular-editor>
                 </div>
                 <button type="submit" class="login" style="margin-top: 5px; float:right">Comment</button>
@@ -32,9 +30,6 @@
             </div>
             <div style="margin-top: 60px;" *ngFor="let comment of comments | reverse">
               <div class="comment">
-                <!-- <div class="username">
-                  <span href="">{{comment.username}}</span>
-                </div> -->
                 <a href="" class="username">{{comment.username}}</a>
                 <div>
                   <p>{{comment.createdAt | timeago}}</p>

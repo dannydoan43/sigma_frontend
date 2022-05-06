@@ -17,7 +17,7 @@ export class AuthenticationService {
   constructor(private httpClient: HttpClient,private localStorage:LocalStorageService) { }
 
   refreshTokenPayload = {
-    refreshToken: this.getRefreshToken(), //these values are null
+    refreshToken: this.getRefreshToken(), 
     username: this.getUserName()
   }
   signup(signupRequest: SignupRequest): Observable<any> {
@@ -39,16 +39,6 @@ export class AuthenticationService {
   logout(){
     this.httpClient.post('http://localhost:3333/api/auth/logout',this.refreshTokenPayload,{responseType:'text'}).subscribe({next : (n) => {console.log(n)},
      error : (e) => {console.log(e);console.log(this.refreshTokenPayload);throwError(()=>e)}});
-     //whenever a user doesnt reload a page after logging in-the localstorage has values of null
-    //   data => {
-    //   console.log(data);
-    // },error=> {
-    //   console.log(this.localStorage.retrieve('username'));
-    //   console.log(this.refreshTokenPayload);
-    //   console.log(JSON.parse(this.localStorage.retrieve('username')));
-    //   console.log(error);
-    //   throwError(()=>error);
-    // })
     this.localStorage.clear('authenticationToken');
     this.localStorage.clear('username');
     this.localStorage.clear('refreshToken');
@@ -59,7 +49,6 @@ export class AuthenticationService {
     return this.localStorage.retrieve('authenticationToken');
   }
   refreshToken() {
-    //the code messes up here
     return this.httpClient.post<LoginResponse>('http://localhost:3333/api/auth/refresh/token',
       this.refreshTokenPayload)
       .pipe(tap(response => {

@@ -21,7 +21,5 @@ export class UsersService {
   updateUser(userPayload:UserPayload) : Observable<any> {
     return this.http.put('http://localhost:3333/users/update/', userPayload,{responseType:'text'});
   }
-  // getEmailbyUsername(username:string){
-  //   return this.http.get('http://localhost:3333/users/u/' + username,{responseType:'text'});
-  // }
+
 }

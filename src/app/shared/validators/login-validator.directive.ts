@@ -19,7 +19,7 @@ export class LoginValidatorDirective {
     let matches: boolean = pattern1.test(value) && pattern2.test(value) && pattern3.test(value);
 
     if(!matches) {
-      return {"namePatternError":true}  //this is what you call in the html for it to show
+      return {"namePatternError":true}
     }
     return null;
   }

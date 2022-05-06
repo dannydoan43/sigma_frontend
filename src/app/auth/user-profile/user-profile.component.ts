@@ -74,7 +74,6 @@ export class UserProfileComponent implements OnInit {
         this.userService.getUserByUsername(name).subscribe({
           next:(n)=>{
             this.user=n;
-            // console.log("WHAT IS THIS?" + n.description);
             this.updateUserForm.get('description')?.setValue(n.description);
             this.updateUserForm.get('firstName')?.setValue(n.firstName);
             this.updateUserForm.get('lastName')?.setValue(n.lastName);
@@ -93,7 +92,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   updateUser() {
-    this.userPayload.email=this.user.email!;  //! is not null indicator
+    this.userPayload.email=this.user.email!;
     this.userPayload.description=this.updateUserForm.get('description')?.value;
     this.userPayload.firstName=this.updateUserForm.get('firstName')?.value;
     this.userPayload.lastName=this.updateUserForm.get('lastName')?.value;

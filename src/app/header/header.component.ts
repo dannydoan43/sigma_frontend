@@ -29,6 +29,5 @@ export class HeaderComponent implements OnInit {
     this.authService.logout();
     this.isLoggedIn=false;
     this.router.navigateByUrl('');
-    //whenever i route to /login it reloads the page? but when it is '' it does not
   }
 }

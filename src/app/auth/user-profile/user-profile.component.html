@@ -3,7 +3,6 @@
       Welcome <b>{{currentUser}}</b>.<br />
       This is your user profile page.
     </div>
-    <!-- <hr /> -->
     <div class="text ">
         <button class="login " (click)="displayPosts()">Posts</button>
         <button class="login" (click)="displayComments()">Comments</button>
@@ -15,7 +14,6 @@
 
     <app-post-section [posts]="posts"></app-post-section>
 </div>
-    <!-- <hr /> -->
     <div class="text" *ngIf="showComments">
       Your Comments:
       <hr>

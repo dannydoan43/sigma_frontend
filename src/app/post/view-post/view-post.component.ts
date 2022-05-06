@@ -49,9 +49,6 @@ export class ViewPostComponent implements OnInit {
     this.commentForm = this.fb.group({
       message :['',[Validators.required]],
     });
-    //activated route is getting the posts id
-    // this.updateCommentForm.get('message')?.setValue(this.comments[this.commentToUpdate].message);
-    // this.getEmailbyUsername();
   }
 
   private getPostbyId(){
@@ -69,11 +66,9 @@ export class ViewPostComponent implements OnInit {
       throwError(()=>e);
     }})
   }
-  //how to get usersemail, and username(owner)?
   postComment() {
     this.commentPayload.message = this.commentForm.get('message')?.value;
     this.commentPayload.username=this.username;
-    //console.log("LOOK OVER HERE: " + this.username + " : " + this.email);
     this.commentService.addCommentToPost(this.commentPayload).subscribe({next :(v) => {
       this.commentForm.get('message')?.setValue('');
       this.getCommentsForPost();
@@ -94,14 +89,12 @@ export class ViewPostComponent implements OnInit {
     })
     this.updateCommentForm.get('message')?.setValue(this.message);
 
-    //so it is the 7th comment in the db...but the 1st(0) message in this comments array
   }
 
   updateComment() {
     this.commentPayload.message = this.updateCommentForm.get('message')?.value;
     this.commentPayload.id = this.commentToUpdate;
     this.commentPayload.username = this.username;
-    // this.commentPayload.postsId = this.postId;
 
     this.commentService.updateComment(this.commentPayload).subscribe({
       next:(v) => {
@@ -122,23 +115,16 @@ export class ViewPostComponent implements OnInit {
       throwError(()=>e);
     }});
   }
-  //currently this function is failing
-  // private getEmailbyUsername(){
-  //   this.userService.getEmailbyUsername(this.username).subscribe({next:(v)=>{
-  //     this.email=v;
-  //   },error:(e)=>{
-  
-  //     throwError(()=>e);
-  //   }})
-  // }
-  //close() is a reserved name....
+
   discardChanges() {
     this.updateCom=false;
   }
+
   goBack() {
     this.router.navigateByUrl('home');
     console.log("cmon...");
   }
+
   editorConfig: AngularEditorConfig = {
     editable: true,
       spellcheck: true,
@@ -176,9 +162,8 @@ export class ViewPostComponent implements OnInit {
       },
     ],
     uploadUrl: 'v1/image',
-    // upload: (file: File) => {  },
     uploadWithCredentials: false,
-    sanitize: false,   //if your program stops getting white background turn this to false
+    sanitize: false,
     toolbarPosition: 'top',
     toolbarHiddenButtons: [
       ['justifyCenter',

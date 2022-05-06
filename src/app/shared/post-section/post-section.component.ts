@@ -17,27 +17,16 @@ import { throwError } from 'rxjs';
 export class PostSectionComponent implements OnInit {
 
   @Input() posts: PostsModel[] = [];
-  // updatePostForm:FormGroup=this.fb.group({});
-  // postPayload:PostPayload;
   loggedInMatchesCreator:boolean=false;
   currentUser:string='';
 
   constructor(private router:Router,intl:TimeagoIntl,private authService:AuthenticationService,private postService:PostsService) { 
     intl.strings=englishStrings;
     intl.changes.next();
-    // this.postPayload = {
-    //   text: '',
-    //   username:'',
-    //   title:''
-    // };
   }
 
   ngOnInit(): void {
     this.currentUser=this.authService.getUserName();
-    // this.updatePostForm=this.fb.group({
-    //   text: ['',[Validators.required]],
-    //   title:['',[Validators.required]]
-    // });
   }
 
   deletePost(id:number) {
@@ -52,9 +41,6 @@ export class PostSectionComponent implements OnInit {
   }
 
   goToUpdate(id:number): void {
-    // console.log(post.id);
-    // console.log(post.title);
-    // console.log(post.text);
     this.router.navigateByUrl('/update-post/' + id);
   }
 

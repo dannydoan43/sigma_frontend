@@ -1,30 +1,21 @@
     <div class="row post" *ngFor="let post of posts | reverse">
-        <!-- Section to Display Post Information-->
         <div class="col-md-11">
-          
-            
             <span class="subreddit-info">
-              <!-- <span class="subreddit-text"><a class="posturl" routerLink=""></a></span> -->
               <span class="subreddit-text">Posted by <a>{{post.username}}</a> {{post.createdAt |timeago}}</span>
-              <!-- <span> . {{post.createdAt |timeago}}</span> -->
             </span>
             <hr />
             <div>{{post.likeCount}}</div>
             <a href="/view-post/{{post.id}}">
               <div class="post-title">
                 <span class="postname">{{post.title}}</span>
-                <!-- <a> was giving it an underline -->
               </div>
               <div>
                 <p class="post-text" [innerHtml]="post.text"></p>
               </div>
               <hr />
             </a>
-
             <span>
-            <!-- <a class="btnCommments" role="button">
-            </a> -->
-            <button class="test" (click)="goToPost(post.id)" style=" margin-bottom: 10px;"> <!--margin-top:20px-->
+            <button class="test" (click)="goToPost(post.id)" style=" margin-bottom: 10px;"> 
               COMMENTS
             </button>
             <span *ngIf="post.username == currentUser">
@@ -33,8 +24,6 @@
               </button>
               <button class="test" (click)="deletePost(post.id)">REMOVE</button>
             </span>
-            <!-- <hr> -->
-            <!-- maybe remove this hr -->
-                    </span>
+            </span>
       </div>
   </div>

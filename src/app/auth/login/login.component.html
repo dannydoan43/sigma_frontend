@@ -14,7 +14,6 @@
                                 <div class="alert alert-danger" *ngIf="!loginForm.get('username')?.valid && loginForm.get('username')?.touched">
                                    Please provide a valid username
                                 </div>        
-                                                            <!-- changed span to div for spacing -->
                             </div>
                         </div>
  
@@ -35,7 +34,6 @@
                             <span style="padding-left: 15px">New User? <a routerLink="/signup">SIGN UP</a></span>
                         </span>   
                         <div class="alert alert-danger" *ngIf='this.isError'>
-                            <!-- changed login-failed to alert danger and remoed p.login-failed-text -->
                              Login Failed. Please check your credentials and try again.
                         </div>
                         <div class="login-failed" [ngStyle]="{'background-color': 'green'}" *ngIf="this.successMessage.length > 0">

@@ -12,7 +12,6 @@ import { LoginValidatorDirective } from 'src/app/shared/validators/login-validat
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-//formbuilder?
   signupRequest:SignupRequest;
   signupForm: FormGroup = this.fb.group({});
   constructor(private authService: AuthenticationService, private router: Router,private fb:FormBuilder) { 
@@ -31,8 +30,7 @@ export class SignupComponent implements OnInit {
       email: ['',[Validators.required,Validators.email]],
       password: ['',[Validators.required]],
       firstName: ['',[Validators.required,LoginValidatorDirective.validateName]],
-      lastName: ['',[Validators.required,LoginValidatorDirective.validateName]]   //just added in the directive stuff
-      //signupForm.controls.firstName.dirty      signupForm.controls.firstName.hasError('namePatternError')
+      lastName: ['',[Validators.required,LoginValidatorDirective.validateName]]
     })
   }
 
@@ -44,7 +42,7 @@ export class SignupComponent implements OnInit {
     this.signupRequest.lastName = this.signupForm.get('lastName')?.value;
 
     this.authService.signup(this.signupRequest).subscribe( {
-      next : (v) => {       //route to login
+      next : (v) => {
         this.router.navigateByUrl('login')
         console.log(v);
       }, error : (e) => {

@@ -26,14 +26,11 @@
   
   .post{
     --post-line-color: white;    
-    /* border: 1px solid white;     */
     border: 1px solid rgba(253, 253, 253, 0.2);
     margin-top:10px;
     margin-bottom: 10px;
     overflow: hidden;
     background-color: #2C2F33;
-    /* background-color: rgba(255,255,255,0.8); */
-    /* color: #878A8C; */
     color:aliceblue;
     position: relative;
     border-radius: 4px;
@@ -46,7 +43,6 @@
       margin-bottom: 10px;
       overflow: hidden;
       background-color: #2C2F33;
-      /* color: #878A8C; */
       color:aliceblue;
       position: relative;
       border-radius: 4px;
@@ -60,9 +56,7 @@
     color: aliceblue;
     background-color: #2C2F33;
     opacity: .3;
-    /* outline-color: #2C2F33;
-    outline-width: 0; */
+
     border: none;
     font-size: small;
 }
-/* added in this to help for linebreaks */

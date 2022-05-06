@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
       username: ['',[Validators.required]],
       password: ['',[Validators.required]]
     });
-    //activatedRoute?
   }
 
   login() {
@@ -39,7 +38,7 @@ export class LoginComponent implements OnInit {
       next:(v) => {
         this.isError=false;
         console.log(v);
-        this.route.navigateByUrl('home').then(()=> {window.location.reload();});    //holy shit this did it
+        this.route.navigateByUrl('home').then(()=> {window.location.reload();});
       },
       error: (e) => {
         this.isError=true;

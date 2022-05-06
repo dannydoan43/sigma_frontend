@@ -29,11 +29,8 @@ export class UpdatePostComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.postId=this.activatedRoute.snapshot.params['id'];
     this.getPostbyId();
-    // // console.log(this.post.text); //NO VALUE
     this.createForm();
-    // this.postService.getPostById(this.postId).pipe(tap(post=>this.updatePostForm.patchValue(post)));
     this.activatedRoute.params.subscribe({
       next:(v) => {
         let id = v['id'];
@@ -41,7 +38,6 @@ export class UpdatePostComponent implements OnInit {
           next:(v) => {
             this.post=v;
             console.log("this is inside posts inside " + this.post.username);
-            // this.postId=post.id!      //used exclamation point here...
             this.updatePostForm.get('text')?.setValue(v.text);
             this.updatePostForm.get('title')?.setValue(v.title);
           }, error:(e) => {
@@ -61,7 +57,7 @@ export class UpdatePostComponent implements OnInit {
       text: ['',[Validators.required]],
       title:['',[Validators.required]]
     });
-    console.log("INSIDE CREATEFORM" + this.post.id); //NO VALUE
+    console.log("INSIDE CREATEFORM" + this.post.id);
 
   }
 
@@ -84,7 +80,7 @@ export class UpdatePostComponent implements OnInit {
   private getPostbyId(){
     this.postService.getPostById(this.postId).subscribe({next:(v)=> {
       this.post=v;
-      console.log(this.post.text);  //this gets the value...why cant i pass it around?
+      console.log(this.post.text);
     },error : (e) => {
       throwError(()=>e);
     }})
@@ -133,7 +129,7 @@ editorConfig: AngularEditorConfig = {
   uploadUrl: 'v1/image',
   // upload: (file: File) => {  },
   uploadWithCredentials: false,
-  sanitize: false,   //if your program stops getting white background turn this to false
+  sanitize: false,
   toolbarPosition: 'top',
   toolbarHiddenButtons: [
     ['bold', 'italic'],
