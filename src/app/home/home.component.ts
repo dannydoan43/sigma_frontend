@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.postsService.getAllPosts().subscribe({ next : (n) => {this.posts=n}, error : (e) => {console.log(e);console.log("nice one dumbass")}});
+    this.postsService.getAllPosts().subscribe({ next : (n) => {this.posts=n}, error : (e) => {console.log(e);console.log("nice one")}});
   }
 
 }
